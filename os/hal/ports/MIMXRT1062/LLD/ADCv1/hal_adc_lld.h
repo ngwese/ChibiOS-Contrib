@@ -165,16 +165,6 @@
 #endif
 
 /**
- * @brief   ADC3 driver enable switch.
- * @details If set to @p TRUE the support for ADC1 is included.
- * @note    The default is @p TRUE.
- */
-#if !defined(MIMXRT1062_ADC_USE_ADC3) || defined(__DOXYGEN__)
-#define MIMXRT1062_ADC_USE_ADC3                FALSE
-#endif
-
-
-/**
  * @brief   ADC interrupt priority level setting.
  */
 #if !defined(MIMXRT1062_ADC_IRQ_PRIORITY) || defined(__DOXYGEN__)
@@ -195,12 +185,7 @@
 #error "ADC2 not present in the selected device"
 #endif
 
-#if MIMXRT1062_ADC_USE_ADC3 && !MIMXRT1062_HAS_ADC3
-#error "ADC3 not present in the selected device"
-#endif
-
-
-#if !MIMXRT1062_ADC_USE_ADC1 && !MIMXRT1062_ADC_USE_ADC2 && MIMXRT1062_ADC_USE_ADC3
+#if !MIMXRT1062_ADC_USE_ADC1 && !MIMXRT1062_ADC_USE_ADC2
 #error "ADC driver activated but no ADC peripheral assigned"
 #endif
 
@@ -289,11 +274,6 @@ extern ADCDriver ADCD1;
 #if MIMXRT1062_ADC_USE_ADC2 && !defined(__DOXYGEN__)
 extern ADCDriver ADCD2;
 #endif
-
-#if MIMXRT1062_ADC_USE_ADC3 && !defined(__DOXYGEN__)
-extern ADCDriver ADCD3;
-#endif
-
 
 #ifdef __cplusplus
 extern "C" {

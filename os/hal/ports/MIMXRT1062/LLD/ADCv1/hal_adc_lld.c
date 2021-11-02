@@ -46,11 +46,6 @@ ADCDriver ADCD1;
 ADCDriver ADCD2;
 #endif
 
-/** @brief ADC1 driver identifier.*/
-#if MIMXRT1062_ADC_USE_ADC3 || defined(__DOXYGEN__)
-ADCDriver ADCD3;
-#endif
-
 /*===========================================================================*/
 /* Driver local variables and types.                                         */
 /*===========================================================================*/

@@ -21,6 +21,7 @@ HALCONF := $(strip $(shell cat $(CONFDIR)/halconf.h $(CONFDIR)/halconf_community
 
 endif
 
+include ${CHIBIOS_CONTRIB}/os/hal/ports/MIMXRT1062/LLD/ADCv1/driver.mk
 include ${CHIBIOS_CONTRIB}/os/hal/ports/MIMXRT1062/LLD/GPIOv1/driver.mk
 include ${CHIBIOS_CONTRIB}/os/hal/ports/MIMXRT1062/LLD/UARTv1/driver.mk
 include ${CHIBIOS_CONTRIB}/os/hal/ports/MIMXRT1062/LLD/PITv1/driver.mk
